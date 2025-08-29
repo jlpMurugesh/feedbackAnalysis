@@ -32,7 +32,7 @@ totalRespondedTrainees
 
 CommentsByTrainees(May be AI can be used)
 
-THINGS INTENDED/EXPECTED FROM CLIENT(JORDAN):
+THINGS INTENDED/EXPECTED FROM CLIENT(JORDAN) AS A DEVELOPER:
 
 DESIGN:
 
@@ -42,3 +42,10 @@ For scores -> Adjustable table
 Last part: A GenAI thing
 
 Things to remember: It need not be a A4 sheet thing...
+
+CHALLENGES IN THE PROJECT:
+
+* Basically there are two types of forms
+    1. Form for single trainer(Questions available)
+    2. Form for multiple trainers(No questions in the excel sheet)
+        -> For this form, how do I get the questions as a web app???
