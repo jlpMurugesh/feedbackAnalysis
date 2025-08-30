@@ -1,1 +1,5 @@
 No Microsoft Azure access from the Client/IT team
+
+
+Cloud Firestore - 2016
+Realtime Database - 2011

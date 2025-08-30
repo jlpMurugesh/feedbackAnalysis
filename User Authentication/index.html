@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Fixed: was "UTF-ag-8" -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Firebase Auth Module</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="auth-container">
-            <h1>Welcome</h1>
-            <p>Please choose an option to continue</p>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn btn-primary">Login</a>
-                <a href="signup.html" class="btn btn-secondary">Sign Up</a>
-            </div>
+    <!-- This container will hold the login/signup forms -->
+    <div id="auth-container">
+        <!-- Sign Up Form -->
+        <div id="signup-form-container">
+            <h2>Create an Account</h2>
+            <form id="signup-form">
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password (min 6 chars)" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p id="signup-error-message" class="error"></p> <!-- Moved inside signup container -->
+            <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
+        </div>
+        
+        <!-- Login Form (initially hidden) -->
+        <div id="login-form-container" class="hidden">
+            <h2>Log In</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p id="login-error-message" class="error"></p> <!-- Moved inside login container -->
+            <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
         </div>
     </div>
-
-    <script src="js/config.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/main.js"></script>
+    
+    <!-- This container will be shown when the user is logged in -->
+    <div id="dashboard-container" class="hidden">
+        <h2>Welcome!</h2>
+        <p>You are logged in as <span id="user-email"></span>.</p>
+        <button id="logout-button">Log Out</button>
+    </div>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <!-- Your App's Script -->
+    <script src="script.js"></script>
 </body>
 </html>
