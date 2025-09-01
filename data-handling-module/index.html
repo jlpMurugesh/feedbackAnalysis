@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Handling - Feedback Uploader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Feedback Processor</h2>
+            <p>Upload a CSV file from Microsoft Forms to parse and store the feedback.</p>
+        </div>
+
+        <div class="card">
+            <input type="file" id="csv-file-input" accept=".csv">
+            <label for="csv-file-input" class="file-label">Choose CSV File</label>
+            <span id="file-name">No file selected</span>
+        </div>
+
+        <!-- This section will appear only for single-trainer forms -->
+        <div class="card hidden" id="single-trainer-card">
+            <label for="trainer-name">Trainer's Name:</label>
+            <input type="text" id="trainer-name" placeholder="Enter the trainer's name">
+        </div>
+
+        <div class="actions">
+            <button id="process-button" disabled>Process & Upload to Firebase</button>
+            <button id="download-json-button" disabled>Download JSON</button>
+        </div>
+
+        <div id="status-message"></div>
+        <a href="../User authentication/index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <!-- External Library for CSV Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Your App's Script -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -30,6 +30,8 @@ const userEmailSpan = document.getElementById('user-email');
 const signupErrorMessage = document.getElementById('signup-error-message');
 const loginErrorMessage = document.getElementById('login-error-message');
 
+const goToDataHandlingButton = document.getElementById('go-to-data-handling');
+
 // --- Enhanced Error Handling Function ---
 function getReadableErrorMessage(error) {
     // Handle Firebase Auth error codes
@@ -105,6 +107,10 @@ showLoginLink.addEventListener('click', (e) => {
     // Clear error messages when switching
     displayError(signupErrorMessage, '');
     displayError(loginErrorMessage, '');
+});
+
+goToDataHandlingButton.addEventListener('click', () => {
+    window.location.href = '../data-handling-module/index.html';
 });
 
 showSignupLink.addEventListener('click', (e) => {
@@ -196,6 +202,11 @@ auth.onAuthStateChanged(user => {
     if (user) {
         // User is signed in
         console.log('Auth state changed: Logged in as', user.email);
+
+        // if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        //     window.location.href = '../dashboard.html';
+        // }
+
         authContainer.classList.add('hidden');
         dashboardContainer.classList.remove('hidden');
         userEmailSpan.textContent = user.email;
