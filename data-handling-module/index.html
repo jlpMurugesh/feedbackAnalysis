@@ -9,41 +9,39 @@
 <body>
 
     <div class="container">
+        <!-- ... header and card sections are unchanged ... -->
         <div class="header">
             <h2>Feedback Processor</h2>
-            <p>Upload a CSV file from Microsoft Forms to parse and store the feedback.</p>
+            <p>Upload an XLSX file from Microsoft Forms to parse and store the feedback.</p>
         </div>
-
         <div class="card">
-            <input type="file" id="csv-file-input" accept=".csv">
-            <label for="csv-file-input" class="file-label">Choose CSV File</label>
+            <input type="file" id="csv-file-input" accept=".xlsx, .xls">
+            <label for="csv-file-input" class="file-label">Choose XLSX File</label>
             <span id="file-name">No file selected</span>
         </div>
-
-        <!-- This section will appear only for single-trainer forms -->
         <div class="card hidden" id="single-trainer-card">
             <label for="trainer-name">Trainer's Name:</label>
             <input type="text" id="trainer-name" placeholder="Enter the trainer's name">
         </div>
 
+        <!-- ACTION: Update the actions div -->
         <div class="actions">
-            <button id="process-button" disabled>Process & Upload to Firebase</button>
-            <button id="download-json-button" disabled>Download JSON</button>
+            <button id="process-button" disabled>Upload to Firebase</button>
+            <!-- Renamed button for V1 JSON -->
+            <button id="download-v1-button" class="btn-secondary" disabled>Download Trainee-Centric JSON (V1)</button>
+            <!-- New button for V2 JSON -->
+            <button id="download-v2-button" class="btn-tertiary" disabled>Download Trainer-Centric JSON (V2)</button>
         </div>
 
         <div id="status-message"></div>
-        <a href="../User authentication/index.html" class="back-link">← Back to Dashboard</a>
+        <a href="../User-authentication/index.html" class="back-link">← Back to Dashboard</a>
     </div>
 
-    <!-- External Library for CSV Parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    
-    <!-- Firebase SDKs -->
+    <!-- ... script tags are unchanged ... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
-    <!-- Your App's Script -->
     <script src="script.js"></script>
 </body>
 </html>
