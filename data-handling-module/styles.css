@@ -149,3 +149,12 @@ button:disabled {
 .btn-tertiary:hover:not(:disabled) {
     background-color: #5a6268;
 }
+
+/* Add this to the bottom of your styles.css */
+.btn-report {
+    background-color: #dc3545; /* A distinct color for the report button */
+}
+
+.btn-report:hover:not(:disabled) {
+    background-color: #c82333;
+}

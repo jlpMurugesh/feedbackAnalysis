@@ -23,6 +23,7 @@ const downloadV2Button = document.getElementById('download-v2-button');
 const statusMessage = document.getElementById('status-message');
 const singleTrainerCard = document.getElementById('single-trainer-card');
 const trainerNameInput = document.getElementById('trainer-name');
+const generateReportButton = document.getElementById('generate-report-button');
 
 let traineeCentricData = null; // V1 JSON
 let headerInfoCache = null;
@@ -39,6 +40,15 @@ csvFileInput.addEventListener('change', handleFileSelect);
 processButton.addEventListener('click', uploadDataToFirebase);
 downloadV1Button.addEventListener('click', downloadV1Json);
 downloadV2Button.addEventListener('click', downloadV2Json);
+
+generateReportButton.addEventListener('click', () => {
+    if (!uploadedFileName) {
+        showStatus('Please process a file first.', true);
+        return;
+    }
+    // Navigate to the new module, passing the report ID in the URL
+    window.location.href = `../feedback-report-module/index.html?reportId=${uploadedFileName}`;
+});
 
 // --- 3. CORE FILE HANDLING & PARSING (UNCHANGED) ---
 function handleFileSelect(event) {
@@ -60,6 +70,7 @@ function handleFileSelect(event) {
             processButton.disabled = false;
             downloadV1Button.disabled = false;
             downloadV2Button.disabled = false;
+            generateReportButton.disabled = false;
         } catch (error) {
             showStatus(`Processing Error: ${error.message}`, true);
             resetState();
@@ -292,6 +303,7 @@ function resetState() {
     downloadV2Button.disabled = true;
     singleTrainerCard.classList.add('hidden');
     trainerNameInput.value = '';
+    generateReportButton.disabled = true; 
     showStatus('');
 }
 

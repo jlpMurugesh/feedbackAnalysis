@@ -1,0 +1,92 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* --- User Interface Styles --- */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-group { text-align: left; margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+
+button {
+    background-color: #dc3545; color: white; padding: 0.8rem 1.5rem; border: none;
+    border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s;
+}
+button:disabled { background-color: #ccc; cursor: not-allowed; }
+button:hover:not(:disabled) { background-color: #c82333; }
+#status-message { min-height: 1.2em; margin-top: 1rem; font-weight: bold; }
+.back-link { display: block; margin-top: 1.5rem; }
+
+/* --- Hidden PDF Template Styles --- */
+#pdf-template-container {
+    position: absolute;
+    left: -9999px; /* Position it off-screen */
+    top: 0;
+    width: 1000px; /* A fixed width for consistent PDF output */
+    background: white;
+    padding: 20px;
+}
+
+.report-page { border: 1px solid #ddd; padding: 25px; margin-bottom: 20px; }
+.report-header {
+    background-color: #8c52ff; /* A purple similar to your example */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.info-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #dee2e6; }
+.info-table th, .info-table td {
+    border: 1px solid #dee2e6; padding: 12px; text-align: center;
+}
+.info-table th { background-color: #f8f9fa; font-weight: 600; }
+
+.questions-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 30px; }
+.question-card {
+    flex: 1 1 calc(25% - 20px); /* Creates a 4-column layout */
+    min-width: 200px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures borders contain the table */
+}
+.question-title {
+    background-color: #e9ecef; padding: 10px; font-weight: bold;
+    text-align: center; border-bottom: 1px solid #dee2e6;
+}
+.question-table { width: 100%; border-collapse: collapse; }
+.question-table td { padding: 8px 12px; border-top: 1px solid #f1f1f1; }
+.question-table td:last-child { text-align: right; font-weight: bold; }
+
+.comments-section { margin-top: 20px; }
+.comments-header {
+    background-color: #8c52ff; color: white; padding: 12px;
+    font-weight: bold; text-align: center; border-radius: 5px;
+}
+.comments-body { min-height: 100px; /* Placeholder */ }
+
+/* Add this to the bottom of your styles.css */
+.comments-body ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.comments-body li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}

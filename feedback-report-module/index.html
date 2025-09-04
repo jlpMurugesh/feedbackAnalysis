@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Report Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Feedback Report</h2>
+        <p id="report-id-display">Loading report...</p>
+        
+        <div class="form-group">
+            <label for="batch-name">Batch Name</label>
+            <input type="text" id="batch-name" placeholder="e.g., ILP 2023-24 Batch 5">
+        </div>
+        <div class="form-group">
+            <label for="feedback-title">Feedback Title</label>
+            <input type="text" id="feedback-title" placeholder="e.g., Angular Final Feedback Analysis">
+        </div>
+
+        <button id="download-pdf-button" disabled>Generate & Download PDF(s)</button>
+        <p id="status-message"></p>
+        <a href="../data-handling-module/index.html" class="back-link">← Back to Uploader</a>
+    </div>
+
+    <div id="pdf-template-container"></div>
+
+    <!-- Required Libraries (NO Transformers.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Your App's Script (NO type="module") -->
+    <script src="script.js"></script>
+</body>
+</html>
