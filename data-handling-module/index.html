@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Handling - Feedback Uploader</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="container">
@@ -25,13 +27,9 @@
         </div>
 
         <!-- ACTION: Update the actions div -->
+        <!-- AFTER THE CHANGE -->
         <div class="actions">
-            <button id="process-button" disabled>Upload to Firebase</button>
-            <!-- Renamed button for V1 JSON -->
-            <button id="download-v1-button" class="btn-secondary" disabled>Download Trainee-Centric JSON (V1)</button>
-            <!-- New button for V2 JSON -->
-            <button id="download-v2-button" class="btn-tertiary" disabled>Download Trainer-Centric JSON (V2)</button>
-
+            <button id="process-button" disabled>Upload and process the data</button>
             <button id="generate-report-button" class="btn-report" disabled>Generate PDF Report</button>
         </div>
 
@@ -46,4 +44,5 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

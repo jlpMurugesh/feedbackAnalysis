@@ -57,7 +57,7 @@ downloadPdfButton.addEventListener('click', handlePdfGeneration);
 
 // --- 3. GEMINI API INTEGRATION ---
 async function getAiSummary(comments) {
-    const GEMINI_API_KEY = 'AIzaSyD2TbTEtF9t3l0GA-p6dXmXAQ3XSmkOteQ';
+    const GEMINI_API_KEY = 'AIzaSyDZxDKXN-T_tzn-ecmvRwGfl1wCloWAZT4';
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
     if (!GEMINI_API_KEY || GEMINI_API_KEY === 'YOUR_GOOGLE_AI_STUDIO_KEY_HERE') {
         return "AI summary is disabled. Please add your Gemini API key in script.js.";
@@ -294,7 +294,3 @@ function showStatus(message, isError = false) {
     statusMessage.textContent = message;
     statusMessage.style.color = isError ? '#dc3545' : '#28a745';
 }
-
-
-
-
